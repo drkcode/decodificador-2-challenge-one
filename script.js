@@ -1,16 +1,16 @@
+'use strict'
+
 const encryptBtn = document.querySelector('#encrypt-btn')
 const decryptBtn = document.querySelector('#decrypt-btn')
 const closeResultBtn = document.querySelector('#close-result-btn')
 const copyResultBtn = document.querySelector('#copy-text-btn')
-
-const infoText = document.querySelector('.secret-text__text-helper')
+copyResultBtn.style.display = 'none'
 
 const inputText = document.querySelector('#input-text')
+const infoText = document.querySelector('.secret-text__text-helper')
 const outputText = document.querySelector('#output-text')
 const noTextInfo = document.querySelector('.result-text__no-output')
 const resultSection = document.querySelector('.result-text')
-
-copyResultBtn.style.display = 'none'
 
 const keys = new Map()
 keys.set('a', 'enter')
@@ -19,7 +19,7 @@ keys.set('i', 'ai')
 keys.set('o', 'ober')
 keys.set('u', 'ufat')
 
-function showResult(result) {
+const showResult = (result) => {
     outputText.value = result
 
     if (outputText.value) {
@@ -31,18 +31,17 @@ function showResult(result) {
     }
 }
 
-function clearResult() {
-    infoText.style.color = 'red'
+const clearResult = () => {
     noTextInfo.classList.remove('show-no-result')
     outputText.classList.remove('show-text-output')
     resultSection.classList.remove('toggle-result')
+    infoText.style.color = 'red'
     copyResultBtn.style.display = 'none'
     outputText.value = ''
 }
 
-function encryptText(text) {
-    const secretText = text
-        .split('')
+const encryptText = (text) => {
+    const secretText = [...text]
         .map((letter) => {
             if (keys.get(letter)) {
                 return keys.get(letter)
@@ -54,7 +53,7 @@ function encryptText(text) {
     return secretText
 }
 
-function decryptText(text) {
+const decryptText = (text) => {
     let plainText = text
 
     keys.forEach((v, k) => {
@@ -64,7 +63,7 @@ function decryptText(text) {
     return plainText
 }
 
-function verifyText(text) {
+const verifyText = (text) => {
     if (!text) {
         return
     }
@@ -76,12 +75,13 @@ function verifyText(text) {
     if (hasInvalidLetter) {
         return
     }
+
     return text
 }
 
-closeResultBtn.onclick = () => {
+closeResultBtn.addEventListener('click', () => {
     resultSection.classList.remove('toggle-result')
-}
+})
 
 encryptBtn.addEventListener('click', () => {
     const text = verifyText(inputText.value.trim())
@@ -108,7 +108,7 @@ decryptBtn.addEventListener('click', () => {
     showResult(plainText)
 })
 
-copyResultBtn.onclick = () => {
+copyResultBtn.addEventListener('click', () => {
     const text = outputText.value
     outputText.select()
     outputText.setSelectionRange(0, 99999)
@@ -127,4 +127,4 @@ copyResultBtn.onclick = () => {
             copyResultBtn.innerHTML = originalName
         }, 1500)
     }
-}
+})
