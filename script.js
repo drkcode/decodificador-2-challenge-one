@@ -10,6 +10,8 @@ const outputText = document.querySelector('#output-text')
 const noTextInfo = document.querySelector('.result-text__no-output')
 const resultSection = document.querySelector('.result-text')
 
+copyResultBtn.style.display = 'none'
+
 const keys = new Map()
 keys.set('a', 'enter')
 keys.set('e', 'imes')
@@ -20,12 +22,22 @@ keys.set('u', 'ufat')
 function showResult(result) {
     outputText.value = result
 
-    if (outputText.textContent) {
+    if (outputText.value) {
         noTextInfo.classList.add('show-no-result')
         outputText.classList.add('show-text-output')
         resultSection.classList.add('toggle-result')
         infoText.style.color = 'black'
+        copyResultBtn.style.display = 'block'
     }
+}
+
+function clearResult() {
+    infoText.style.color = 'red'
+    noTextInfo.classList.remove('show-no-result')
+    outputText.classList.remove('show-text-output')
+    resultSection.classList.remove('toggle-result')
+    copyResultBtn.style.display = 'none'
+    outputText.value = ''
 }
 
 function encryptText(text) {
@@ -52,7 +64,7 @@ function decryptText(text) {
     return plainText
 }
 
-const verifyText = (text) => {
+function verifyText(text) {
     if (!text) {
         return
     }
@@ -75,7 +87,7 @@ encryptBtn.addEventListener('click', () => {
     const text = verifyText(inputText.value.trim())
 
     if (!text) {
-        infoText.style.color = 'red'
+        clearResult()
         return
     }
 
@@ -86,7 +98,10 @@ encryptBtn.addEventListener('click', () => {
 decryptBtn.addEventListener('click', () => {
     const text = verifyText(inputText.value.trim())
 
-    if (!text) return
+    if (!text) {
+        clearResult()
+        return
+    }
 
     const plainText = decryptText(text)
 
