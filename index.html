@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <title>Challenge One - Decodificador 2</title>
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <img class="logo" src="./img/logo-alura.png" alt="Logo" />
+                <a href="">
+                    <ion-icon
+                        class="header__github-link"
+                        name="logo-github"
+                    ></ion-icon>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="row">
+                <h1 class="main__title">Decodificador 2</h1>
+            </div>
+            <div class="row main-sections">
+                <section class="secret-text">
+                    <div class="secret-text__input-container">
+                        <textarea
+                            class="secret-text__input"
+                            name=""
+                            id="input-text"
+                            cols=""
+                            rows="10"
+                            placeholder="Digite seu texto"
+                        ></textarea>
+                        <span class="secret-text__text-helper">
+                            <ion-icon name="alert-circle-outline"></ion-icon>
+                            <strong>
+                                <small
+                                    >Apenas letras minúsculas e sem
+                                    acento</small
+                                >
+                            </strong>
+                        </span>
+                    </div>
+                    <div class="secret-text__buttons-container">
+                        <button
+                            id="encrypt-btn"
+                            class="base-button secret-text__button secret-text__button--encrypt"
+                        >
+                            Criptografar
+                        </button>
+                        <button
+                            id="decrypt-btn"
+                            class="base-button secret-text__button secret-text__button--decrypt"
+                        >
+                            Descriptografar
+                        </button>
+                    </div>
+                </section>
+                <section class="result-text">
+                    <div class="result-text__container">
+                        <button
+                            id="close-result-btn"
+                            class="base-button result-text__button-close"
+                        >
+                            <ion-icon
+                                class="close-icon"
+                                name="close-outline"
+                            ></ion-icon>
+                        </button>
+                        <textarea class="result-text__output" id="output-text">
+                        </textarea>
+                        <div class="result-text__no-output">
+                            <img
+                                class="result-text__image"
+                                src="img/no-result-image.png"
+                                alt="Desenho de uma mulher segurando uma lupa."
+                            />
+
+                            <h3 class="result-text__message-title">
+                                Nenhuma mensagem encontrada
+                            </h3>
+                            <p class="result-text__message-body">
+                                Digite um texto que voçê deseja criptografar ou
+                                descriptografar.
+                            </p>
+                        </div>
+                        <button
+                            id="copy-text-btn"
+                            class="base-button result-text__button-copy"
+                        >
+                            <ion-icon
+                                class="result-text__icon"
+                                name="copy-outline"
+                            ></ion-icon>
+                            Copiar
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <script src="script.js"></script>
+    </body>
+</html>
