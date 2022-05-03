@@ -2,7 +2,7 @@
 
 ## Primeiro desafio
 
--   [Abrir o app]()
+-   [Abrir o app](https://drkcode.github.io/decodificador-2-challenge-one)
 
 ### Resources
 
