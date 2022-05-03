@@ -4,10 +4,7 @@
 
 -   [Abrir o app]()
 
-Library:
+### Resources
 
 -   [Ionicons](https://ionic.io/ionicons);
-
-Images:
-
 -   [undraw](https://undraw.co/)
