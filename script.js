@@ -4,13 +4,13 @@ const encryptBtn = document.querySelector('#encrypt-btn');
 const decryptBtn = document.querySelector('#decrypt-btn');
 const closeResultBtn = document.querySelector('#close-result-btn');
 const copyResultBtn = document.querySelector('#copy-text-btn');
-copyResultBtn.style.display = 'none';
 
 const inputText = document.querySelector('#input-text');
-const infoText = document.querySelector('.secret-text__text-helper');
+const infoText = document.querySelector('.input-section__text-helper');
 const outputText = document.querySelector('#output-text');
-const noTextInfo = document.querySelector('.result-text__no-output');
-const resultSection = document.querySelector('.result-text');
+const noResult = document.querySelector('.no-result');
+const outputResult = document.querySelector('.output-result');
+const resultSection = document.querySelector('.result-section');
 
 const keys = new Map();
 keys.set('a', 'enter');
@@ -21,23 +21,16 @@ keys.set('u', 'ufat');
 
 const showResult = (result) => {
     outputText.value = result;
-
-    if (outputText.value) {
-        noTextInfo.classList.add('show-no-result');
-        outputText.classList.add('show-text-output');
-        resultSection.classList.add('toggle-result');
-        infoText.style.color = 'black';
-        copyResultBtn.style.display = 'block';
-    }
+    resultSection.classList.toggle('show');
+    noResult.classList.toggle('show');
+    outputResult.classList.toggle('show');
+    infoText.classList.remove('is-invalid');
 };
 
 const clearResult = () => {
-    noTextInfo.classList.remove('show-no-result');
-    outputText.classList.remove('show-text-output');
-    resultSection.classList.remove('toggle-result');
-    infoText.style.color = 'red';
-    copyResultBtn.style.display = 'none';
-    outputText.value = '';
+    noResult.classList.add('show');
+    outputResult.classList.remove('show');
+    infoText.classList.add('is-invalid');
 };
 
 const encryptText = (text) => {
@@ -80,7 +73,7 @@ const verifyText = (text) => {
 };
 
 closeResultBtn.addEventListener('click', () => {
-    resultSection.classList.remove('toggle-result');
+    resultSection.classList.remove('show');
 });
 
 encryptBtn.addEventListener('click', () => {
@@ -104,7 +97,6 @@ decryptBtn.addEventListener('click', () => {
     }
 
     const plainText = decryptText(text);
-
     showResult(plainText);
 });
 
@@ -120,6 +112,7 @@ copyResultBtn.addEventListener('click', () => {
     }
 
     inputText.value = '';
+
     if (!copyResultBtn.innerHTML.includes('Copiado!')) {
         const originalName = copyResultBtn.innerHTML.trim();
         copyResultBtn.innerHTML = originalName.replace('Copiar', 'Copiado!');
