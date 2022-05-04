@@ -27,6 +27,7 @@ textarea {
   font-family: inherit;
   border: none;
   outline: none;
+  font-size: 1.75rem;
 }
 
 .base-button {
@@ -162,7 +163,6 @@ textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-size: 1.75rem;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;

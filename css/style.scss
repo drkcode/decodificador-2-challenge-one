@@ -26,6 +26,7 @@ textarea {
     font-family: inherit;
     border: none;
     outline: none;
+    font-size: 1.75rem;
 }
 
 .base-button {
@@ -131,7 +132,6 @@ textarea {
 
     &__text-input {
         flex: 1;
-        font-size: 1.75rem;
         order: 1;
     }
 
