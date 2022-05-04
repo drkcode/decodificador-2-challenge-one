@@ -6,5 +6,5 @@
 
 ### Resources
 
--   [Ionicons](https://ionic.io/ionicons);
+-   [Ionicons](https://ionic.io/ionicons)
 -   [undraw](https://undraw.co/)

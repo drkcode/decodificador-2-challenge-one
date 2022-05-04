@@ -163,6 +163,9 @@ textarea {
       -ms-flex: 1;
           flex: 1;
   font-size: 1.75rem;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 .input-section__text-helper {
@@ -173,6 +176,9 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.5rem;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
 }
 
 .input-section__text-helper strong {
@@ -293,6 +299,16 @@ textarea {
   }
   .input-section {
     width: 60%;
+  }
+  .input-section__text-input {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .input-section__text-helper {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
   .input-section__buttons-container {
     -webkit-box-orient: horizontal;

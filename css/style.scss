@@ -132,12 +132,14 @@ textarea {
     &__text-input {
         flex: 1;
         font-size: 1.75rem;
+        order: 1;
     }
 
     &__text-helper {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        order: 0;
 
         strong {
             font-weight: 500;
@@ -237,6 +239,14 @@ textarea {
 
     .input-section {
         width: 60%;
+
+        &__text-input {
+            order: 0;
+        }
+
+        &__text-helper {
+            order: 1;
+        }
 
         &__buttons-container {
             flex-direction: row;
