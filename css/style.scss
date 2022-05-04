@@ -135,6 +135,10 @@ textarea {
     }
 
     &__text-helper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
         strong {
             font-weight: 500;
         }
