@@ -22,25 +22,23 @@ keys.set('u', 'ufat');
 const showResult = (result) => {
     outputText.value = result;
     resultSection.classList.toggle('show');
-    noResult.classList.toggle('show');
-    outputResult.classList.toggle('show');
     infoText.classList.remove('is-invalid');
+
+    if (outputText.value) {
+        noResult.classList.remove('show');
+        outputResult.classList.add('show');
+    }
 };
 
 const clearResult = () => {
-    noResult.classList.add('show');
     outputResult.classList.remove('show');
+    noResult.classList.add('show');
     infoText.classList.add('is-invalid');
 };
 
 const encryptText = (text) => {
     const secretText = [...text]
-        .map((letter) => {
-            if (keys.get(letter)) {
-                return keys.get(letter);
-            }
-            return letter;
-        })
+        .map((letter) => (keys.get(letter) ? keys.get(letter) : letter))
         .join('');
 
     return secretText;
@@ -61,9 +59,7 @@ const verifyText = (text) => {
         return;
     }
 
-    const hasInvalidLetter = [...text].some(
-        (letter) => !(letter.charCodeAt() > 96 && letter.charCodeAt() < 123)
-    );
+    const hasInvalidLetter = text.match(/[^a-z]/);
 
     if (hasInvalidLetter) {
         return;
