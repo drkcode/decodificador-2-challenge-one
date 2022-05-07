@@ -47,8 +47,8 @@ const encryptText = (text) => {
 const decryptText = (text) => {
     let plainText = text;
 
-    keys.forEach((v, k) => {
-        plainText = plainText.replace(v, k);
+    keys.forEach((value, key) => {
+        plainText = plainText.replace(value, key);
     });
 
     return plainText;
@@ -67,10 +67,6 @@ const verifyText = (text) => {
 
     return text;
 };
-
-closeResultBtn.addEventListener('click', () => {
-    resultSection.classList.remove('show');
-});
 
 encryptBtn.addEventListener('click', () => {
     const text = verifyText(inputText.value.trim());
@@ -96,16 +92,13 @@ decryptBtn.addEventListener('click', () => {
     showResult(plainText);
 });
 
+closeResultBtn.addEventListener('click', () => {
+    resultSection.classList.remove('show');
+});
+
 copyResultBtn.addEventListener('click', () => {
     const text = outputText.value;
-    outputText.select();
-    outputText.setSelectionRange(0, 99999);
-
-    if (navigator.userAgent.includes('Android')) {
-        document.execCommand('copy');
-    } else {
-        navigator.clipboard.writeText(text);
-    }
+    navigator.clipboard.writeText(text);
 
     inputText.value = '';
 
