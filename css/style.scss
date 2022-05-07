@@ -88,6 +88,11 @@ textarea {
     align-items: center;
     justify-content: space-between;
 
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
     &__logo {
         &--alura {
             width: 2.5rem;

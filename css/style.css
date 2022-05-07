@@ -98,8 +98,17 @@ textarea {
           justify-content: space-between;
 }
 
+.header__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .header__logo--alura {
-  width: 2.25rem;
+  width: 2.5rem;
 }
 
 .header__logo--github {

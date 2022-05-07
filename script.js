@@ -104,7 +104,10 @@ copyResultBtn.addEventListener('click', () => {
 
     if (!copyResultBtn.innerHTML.includes('Copiado!')) {
         const originalName = copyResultBtn.innerHTML.trim();
-        copyResultBtn.innerHTML = originalName.replace('Copiar', 'Copiado!');
+        const modifiedName = originalName.replace('Copiar', 'Copiado!');
+
+        copyResultBtn.innerHTML = modifiedName;
+
         setTimeout(() => {
             copyResultBtn.innerHTML = originalName;
         }, 1500);
