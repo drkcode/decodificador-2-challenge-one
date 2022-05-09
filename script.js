@@ -65,7 +65,7 @@ const verifyDecryptedText = (text) => {
 
     for (const value of keysValues) {
         if (text.includes(value)) {
-            return false;
+            return;
         }
     }
 
