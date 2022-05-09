@@ -51,7 +51,24 @@ const decryptText = (text) => {
         plainText = plainText.replaceAll(value, key);
     });
 
+    const textFullDecrypted = verifyDecryptedText(plainText);
+
+    if (!textFullDecrypted) {
+        return decryptText(plainText);
+    }
+
     return plainText;
+};
+
+const verifyDecryptedText = (text) => {
+    const keysValues = [...keys.values()];
+
+    for (const value of keysValues) {
+        if (text.includes(value)) {
+            return false;
+        }
+    }
+    return text;
 };
 
 const verifyText = (text) => {
