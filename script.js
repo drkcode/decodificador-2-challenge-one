@@ -68,6 +68,7 @@ const verifyDecryptedText = (text) => {
             return false;
         }
     }
+
     return text;
 };
 
@@ -89,8 +90,7 @@ encryptBtn.addEventListener('click', () => {
     const text = verifyText(inputText.value.trim());
 
     if (!text) {
-        clearResult();
-        return;
+        return clearResult();
     }
 
     const result = encryptText(text);
@@ -101,8 +101,7 @@ decryptBtn.addEventListener('click', () => {
     const text = verifyText(inputText.value.trim());
 
     if (!text) {
-        clearResult();
-        return;
+        return clearResult();
     }
 
     const plainText = decryptText(text);
