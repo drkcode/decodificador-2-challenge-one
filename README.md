@@ -6,7 +6,7 @@
 
 ### New feature
 
--   Adicionei a funcionalidde para decodificar um texto que foi codificado varias vezes.
+-   Adicionei a funcionalidade para decodificar um texto que foi codificado varias vezes.
 
 ### Resources
 
