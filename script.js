@@ -48,7 +48,7 @@ const decryptText = (text) => {
     let plainText = text;
 
     keys.forEach((value, key) => {
-        plainText = plainText.replace(value, key);
+        plainText = plainText.replaceAll(value, key);
     });
 
     return plainText;
