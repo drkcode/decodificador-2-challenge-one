@@ -13,9 +13,9 @@ const outputResult = document.querySelector('.output-result');
 const resultSection = document.querySelector('.result-section');
 
 const keys = new Map();
-keys.set('a', 'enter');
-keys.set('e', 'imes');
-keys.set('i', 'ai');
+keys.set('e', 'enter');
+keys.set('i', 'imes');
+keys.set('a', 'ai');
 keys.set('o', 'ober');
 keys.set('u', 'ufat');
 
