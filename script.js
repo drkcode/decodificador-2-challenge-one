@@ -21,13 +21,11 @@ keys.set('u', 'ufat');
 
 const showResult = (result) => {
     outputText.value = result;
-    resultSection.classList.toggle('show');
-    infoText.classList.remove('is-invalid');
 
-    if (outputText.value) {
-        noResult.classList.remove('show');
-        outputResult.classList.add('show');
-    }
+    resultSection.classList.toggle('show');
+    outputResult.classList.add('show');
+    noResult.classList.remove('show');
+    infoText.classList.remove('is-invalid');
 };
 
 const clearResult = () => {
