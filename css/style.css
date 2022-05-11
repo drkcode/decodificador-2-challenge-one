@@ -350,13 +350,13 @@ textarea {
     display: none;
   }
   .output-result {
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: all ease-in-out 0.3s;
-    transition: all ease-in-out 0.3s;
   }
   .no-result {
     position: absolute;
@@ -367,13 +367,13 @@ textarea {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: all ease-in-out 0.3s;
-    transition: all ease-in-out 0.3s;
   }
   .no-result__image {
     width: 90%;
@@ -392,14 +392,6 @@ textarea {
     width: 80%;
     margin: 0 auto;
   }
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
 }
 
 .show {

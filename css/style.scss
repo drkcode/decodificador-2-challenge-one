@@ -281,22 +281,22 @@ textarea {
     }
 
     .output-result {
+        transition: all ease-in-out 0.3s;
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
         transform: translateX(100%);
-        transition: all ease-in-out 0.3s;
     }
 
     .no-result {
         position: absolute;
         display: flex;
         flex-direction: column;
+        transition: all ease-in-out 0.3s;
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
         transform: translateX(100%);
-        transition: all ease-in-out 0.3s;
 
         &__image {
             width: 90%;
@@ -319,13 +319,6 @@ textarea {
             margin: 0 auto;
         }
     }
-}
-
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transform: translateX(100%);
 }
 
 .show {
