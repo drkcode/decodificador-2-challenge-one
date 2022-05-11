@@ -77,7 +77,7 @@ const verifyText = (text) => {
         return;
     }
 
-    const hasInvalidLetter = text.match(/[^a-z]/);
+    const hasInvalidLetter = text.match(/[^a-z\s]/);
 
     if (hasInvalidLetter) {
         return;
