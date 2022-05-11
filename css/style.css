@@ -45,7 +45,6 @@ textarea {
 }
 
 .animated-button::after {
-  --border-width: 3px;
   position: absolute;
   content: '';
   top: calc(-1 * var(--border-width));
@@ -229,13 +228,13 @@ textarea {
   left: 0;
   top: 0;
   z-index: 99999;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
 }
 
 .result-section__container {

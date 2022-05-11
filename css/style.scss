@@ -43,7 +43,6 @@ textarea {
     --border-width: 3px;
 
     &::after {
-        --border-width: 3px;
         position: absolute;
         content: '';
         top: calc(-1 * var(--border-width));
@@ -180,11 +179,11 @@ textarea {
     left: 0;
     top: 0;
     z-index: 99999;
+    transition: all ease-in-out 0.3s;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     transform: translateX(100%);
-    transition: all ease-in-out 0.3s;
 
     &__container {
         display: flex;
